@@ -1,2 +1,2 @@
-# mexflix
+# mexflix MVC
 Pagina PHP POO
