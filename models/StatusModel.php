@@ -8,7 +8,7 @@ class StatusModel extends Model {
              $$key = $value;
         }
         //status_id = al valor que se paso por parametro en el array al igual que el status= al valor que se paso
-        $this->query = "REPLACE INTO status  VALUES(default,'$status')";
+        $this->query = "REPLACE INTO status  VALUES($status_id,'$status')";
         $this->query;
         $this->set_query(); 
         
@@ -28,7 +28,7 @@ class StatusModel extends Model {
         
 
     }
-    public function del($status_id = ''){
+    public function del($status_id = ''){   
         $this->query = "DELETE FROM status WHERE status_id = $status_id";
         $this->query;
         $this->set_query();

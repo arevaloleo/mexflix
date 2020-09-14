@@ -26,8 +26,18 @@ class Router {
                     $controller->load_view('movieseries');
                 break;
                 case 'usuarios' : 
+                    if ( !isset($_POST['r']) ) $controller->load_view('users');
                     
-                    $controller->load_view('usuarios');
+                    else if( $_POST['r'] == 'users-add' ) {
+                        $controller->load_view('users-add');
+                    }
+                    else if( $_POST['r'] == 'users-edit' ) {
+                        $controller->load_view('users-edit');
+                    }
+                    else if( $_POST['r'] == 'users-delete' ) {
+                        $controller->load_view('users-delete');
+                    }
+
                 break;
 
                 case 'status' : 
@@ -35,9 +45,6 @@ class Router {
                     
                     else if( $_POST['r'] == 'status-add' ) {
                         $controller->load_view('status-add');
-                        if ($_POST['r'] == 'status-back'){
-                            $controller->load_view('status');
-                        }
                     }
                     else if( $_POST['r'] == 'status-edit' ) {
                         $controller->load_view('status-edit');

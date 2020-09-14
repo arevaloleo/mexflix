@@ -8,8 +8,8 @@ class UserModel extends Model {
              $$key = $value;
         }
         //status_id = al valor que se paso por parametro en el array al igual que el status= al valor que se paso
-        $this->query = "REPLACE INTO users  VALUES(default,'$user','$email','$name','$name','$birthday', MD5('$pass'), '$role')";
-        $this->query;
+        $this->query = "REPLACE INTO users  VALUES('$user','$email','$name','$birthday', MD5('$pass'), '$role')";
+        
         $this->set_query(); 
         
     }
